@@ -68,17 +68,13 @@ app.post("/submit", (req, res) => {
   }
 });
 
-app.get('/reset', (_, _) => {
-  winner = ''
-  stillOn = false
+app.get("/reset", () => {
+  winner = "";
+  stillOn = true;
 });
 
 app.get("/winner", (_, res) => {
   res.status(200).end(winner);
 });
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  console.log("Press Ctrl+C to quit.");
-});
+module.exports = exports = app;
