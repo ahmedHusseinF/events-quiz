@@ -21,11 +21,11 @@ app.get("/", (_, res) => {
 app.post("/submit", (req, res) => {
   const { code, name } = req.body;
 
+  if (!code || !name)
+    return res.status(400).json({ error: "Missing Parameter" });
+
   if (!stillOn)
     return res.status(400).json({ error: `${winner} already won 😔` });
-
-  if (typeof code !== "string")
-    return res.status(400).json({ error: "didn't send correctly" });
 
   const isMalicous = [
     "process",
@@ -68,13 +68,14 @@ app.post("/submit", (req, res) => {
   }
 });
 
-app.get("/reset", () => {
+app.get("/reset", (_, res) => {
   winner = "";
   stillOn = true;
+  return res.status(200).end("Reseted Correctly");
 });
 
 app.get("/winner", (_, res) => {
-  res.status(200).end(winner);
+  return res.status(200).end(winner);
 });
 
 module.exports = exports = app;
