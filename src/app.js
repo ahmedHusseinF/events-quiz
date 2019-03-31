@@ -1,14 +1,10 @@
 const EventEmitter = require("events");
-var express = require("express");
-var bodyParser = require("body-parser");
+const express = require("express");
 
-var app = express();
-
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+const app = express();
 
 // parse application/json
-app.use(bodyParser.json());
+app.use(express.json());
 
 const flag = "🎉🎉APT_ROCKS🎉🎉";
 let stillOn = true;
