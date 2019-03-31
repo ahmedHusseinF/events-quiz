@@ -1,0 +1,23 @@
+{
+  "name": "apt_quiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "npx nodemon index.js"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

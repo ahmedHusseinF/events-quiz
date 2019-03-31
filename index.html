@@ -1,0 +1,39 @@
+<input
+  style="width:100%;height:30px;margin-bottom: 15px;"
+  type="text"
+  placeholder="Write your name here"
+/><br />
+<textarea
+  style="width:100%;height:200px;"
+  placeholder="Write your code here"
+></textarea>
+<br /><br />
+<button>Submit</button>
+<p style="color:green;" id="success"></p>
+<p style="color:red;" id="fail"></p>
+
+<script>
+  document.querySelector("button").addEventListener("click", _ => {
+    const name = document.querySelector("input");
+    const code = document.querySelector("textarea");
+    const success = document.querySelector("p#success");
+    const fail = document.querySelector("p#fail");
+
+    success.textContent = fail.textContent = "";
+
+    fetch("/submit", {
+      method: "post",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name: name.value, code: code.value })
+    })
+      .then(data => data.json())
+      .then(res => {
+        if (res.flag) success.textContent = "Flag is: " + res.flag;
+        else fail.textContent = res.error;
+      })
+      .catch(console.error);
+  });
+</script>
