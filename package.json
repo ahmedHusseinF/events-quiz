@@ -1,7 +1,7 @@
 {
   "name": "apt_quiz",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "An express server that acts like a quiz for an event driven programming talk",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -15,9 +15,10 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "start": "node server.js",
-    "dev": "npx nodemon server.js",
-    "test": "jest"
+    "start": "node src/server.js",
+    "dev": "npx nodemon src/server.js",
+    "test": "jest --watch",
+    "coverage": "jest --coverage"
   },
   "engines": {
     "node": "10"
