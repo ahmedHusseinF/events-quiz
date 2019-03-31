@@ -2,22 +2,27 @@
   "name": "apt_quiz",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "@types/jest": "^24.0.11",
+    "jest": "^24.5.0",
+    "nodemon": "^1.18.10",
+    "superagent": "^5.0.2",
+    "supertest": "^4.0.2"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "npx nodemon index.js"
+    "start": "node server.js",
+    "dev": "npx nodemon server.js",
+    "test": "jest"
   },
   "engines": {
     "node": "10"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "GPLv2"
 }
