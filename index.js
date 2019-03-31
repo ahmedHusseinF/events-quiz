@@ -34,7 +34,8 @@ app.post("/submit", (req, res) => {
     "promise",
     "express",
     "winner",
-    "flag"
+    "flag",
+    "this"
   ].some(token => {
     return code.includes(token);
   });
@@ -65,6 +66,11 @@ app.post("/submit", (req, res) => {
   } else {
     return res.status(400).json({ error: "Failed attempt, try again quickly" });
   }
+});
+
+app.get('/reset', (_, _) => {
+  winner = ''
+  stillOn = false
 });
 
 app.get("/winner", (_, res) => {
