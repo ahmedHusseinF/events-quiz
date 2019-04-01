@@ -1,7 +1,7 @@
 {
   "name": "apt_quiz",
   "version": "0.0.1",
-  "description": "An express server that acts like a quiz for an event driven programming talk",
+  "description": "An express server that serves a quiz for an event driven programming talk",
   "main": "server.js",
   "dependencies": {
     "express": "^4.16.4"
@@ -20,9 +20,12 @@
     "coverage": "jest --coverage"
   },
   "engines": {
-    "node": "10"
+    "node": "8.9.4"
   },
-  "keywords": [],
+  "keywords": [
+    "express",
+    "events"
+  ],
   "author": "",
   "license": "GPLv2"
 }
