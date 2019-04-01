@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "npx nodemon src/server.js",
-    "test": "jest --watch",
+    "test": "jest",
     "coverage": "jest --coverage"
   },
   "engines": {
